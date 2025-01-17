@@ -1,4 +1,5 @@
 
+const API_URL="http://34.131.104.208:3000"
 
 function stopLoading() {
   let dots = document.getElementById("loader")
@@ -28,7 +29,7 @@ async function registerBtn() {
   const data = { name, age, bloodGroup, number };
   try {
     startLoading();
-    const response = await fetch(`${ENV.API_URL}/register`, {
+    const response = await fetch(`${API_URL}/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -72,7 +73,7 @@ async function fetchDonars() {
     bloodGroup: searchKeyword
   }
 
-  const response = await fetch(`${ENV.API_URL}/search`, {
+  const response = await fetch(`${API_URL}/search`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
